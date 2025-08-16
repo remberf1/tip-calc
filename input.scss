@@ -1,0 +1,354 @@
+$font-stack: 'Space Mono', monospace;
+$font-weight: 700;
+$form-size: 24px;
+
+$green-400: hsl(172, 67%, 45%);
+$green-900: hsl(183, 100%, 15%);
+
+// Neutral Colors
+$grey-500: hsl(186, 14%, 43%);
+$grey-400: hsl(184, 14%, 56%);
+$grey-200: hsl(185, 41%, 84%);
+$grey-50:  hsl(189, 47%, 97%);
+$white:    hsl(0, 100%, 100%);
+
+// UI Backgrounds
+$color-background: $grey-200;
+$input-background: $grey-50;
+
+// Semantic Variables
+$primary-color: $green-400;
+$deep-green: $green-900;
+
+
+$transition-duration: 0.3s;  // Set transition duration for smooth effect
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  font-weight: $font-weight;
+  background-color: $color-background;
+  width: 100%;
+  display: flex;
+  transition: all $transition-duration ease-in-out;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 375px;
+  margin: 0 auto;
+  max-height: 850px;
+  transition: all $transition-duration ease-in-out;
+}
+.people-container,.bill-container,.tip-container{
+  margin-top:2.4rem;
+}
+.img-container {
+  display: flex;
+  flex: 0 0 30%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 70px;
+  transition: top $transition-duration ease-in-out;
+}
+
+.cal-container {
+  padding: 2rem;
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  transition: all $transition-duration ease-in-out;
+}
+label{
+  color: $grey-400;
+  font-weight: $font-weight;
+  top: -5px;
+  font-family: $font-stack;
+  position: relative;
+}
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; 
+}
+.svg-text,
+.input-icon {
+  fill: $grey-200;
+  opacity: 0.8;
+}
+.input-icon {
+    position: absolute;
+    left: 10px;  
+    color: #00474B; 
+    font-size: 1rem;
+    pointer-events: none; 
+     transform: translateY(-10%)
+}
+
+.bill-input {
+    padding-left: 40px;  
+    padding-right: 10px;  
+    text-align: right;  
+    font-size: 1.6rem;  
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;  
+    background-color: #F3F9FA;  
+    width: 100%;
+    height: 50px;
+    color: $deep-green;
+    font-family: $font-stack;
+}
+
+.bill-input:focus {
+    outline: 2px solid $green-400;
+}
+.people-container {
+  margin-bottom: 2rem;
+}
+
+.people-label {
+  display: flex;
+  justify-content: space-between;
+
+  label{
+    margin: 0;
+  }
+}
+
+.error-msg {
+  color: #E17457;
+  font-size: 0.875rem;
+  display: none; 
+}
+
+
+
+.people-input {
+  padding-left: 40px;  /* Space for the person icon */
+  padding-right: 10px;  /* Padding for user input on the right */
+  text-align: right;  /* Aligns text inside the input to the right */
+  font-size: 1.6rem;  /* Input text size */
+  font-weight: 600;
+  border: none;  /* No border */
+  border-radius: 5px;  /* Rounded corners */
+  background-color: #F3F9FA;  /* Light background color */
+  width: 100%;
+  height: 50px;
+  font-family: $font-stack;
+  color: $deep-green;  /* Text color */
+  transition: border-color $transition-duration ease-in-out;  
+}
+.people-input:invalid {
+  outline: 2px solid #E17457; /* Change border color when input is invalid */
+}
+
+.people-input:focus:invalid {
+  outline:2px solid #E17457;
+}
+
+.people-input:focus {
+  outline: 2px solid $green-400;
+  border-color: $grey-200;  /* Border color when input is focused */
+}
+
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  transition: grid-template-columns $transition-duration ease-in-out, grid-template-rows $transition-duration ease-in-out;
+}
+
+.tip-button {
+  background-color: $green-900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: $form-size;
+  cursor: pointer;
+  width: 100%;
+  font-family: $font-stack;
+  font-weight: $font-weight;
+  transition: background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+}
+:is(.tip-button:hover, .tip-button:focus) {
+  background-color: $green-400;
+  color: $deep-green;
+}
+.custom-tip{
+  text-align: right;
+  width: 100%;
+  height: 50px;
+  background-color: $input-background;
+  color: $deep-green;
+  border: none;
+  border-radius: 5px;
+  font-size: $form-size;
+  cursor: pointer;
+  font-family: $font-stack;
+  font-weight: $font-weight;
+  transition: background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+ 
+   &::placeholder {  /* Correct usage of the placeholder pseudo-element */
+    color: $deep-green;
+    opacity: 0.8;
+  }
+}
+.custom-tip:focus,
+.custom-tip:hover {
+  background-color: $input-background;
+  outline: 2px solid $green-400;
+}
+
+.result-container{
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 0.5rem;
+  background-color: $deep-green;
+  border-radius: 10px;
+  transition: all $transition-duration ease-in-out;
+}
+.result {
+  display: flex;
+  flex-wrap: wrap;  // Allows items to wrap to the next line if needed
+  justify-content: space-between;  // To keep space between items
+  align-items: center;
+  color: white;
+  padding-top: 0.4rem;
+  margin: 0;
+  gap: 1rem;  // Optional: space between wrapped items
+}
+.result .result-per {
+  flex: 1 1 45%;  // Makes each result item take up 45% of the row, adjust as needed
+  padding: 0;
+  margin: 0;
+}
+
+.result .result-amount {
+  font-size: 2rem;
+  font-weight: $font-weight;
+  color: $green-400;
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: right;  // Aligning the amount to the right side
+  flex: 1 1 45%;  // Makes sure the result amount also wraps nicely on smaller screens
+}
+
+.reset-button {
+  background-color: $primary-color;
+  color: $deep-green;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: $form-size;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: $font-stack;
+  transition: background-color $transition-duration ease-in-out;
+ 
+}
+:is(.reset-button:hover) {
+
+    background-color: $grey-200;
+    color: $deep-green;
+}
+// .amount-display {
+//   transition: opacity 0.3s ease;
+//   opacity: 1;
+// }
+
+// .amount-display.updating {
+//   opacity: 0.3;
+// }
+
+@media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 800px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    transition: all $transition-duration ease-in-out;
+  }
+
+  .img-container {
+    top: 1rem;
+    transition: top $transition-duration ease-in-out;
+  }
+
+  .cal-container {
+    flex-direction: row;
+    padding: 2rem;
+    max-width: 800px;
+    max-height: 400px;
+    margin: 0;
+    transition: all $transition-duration ease-in-out;
+  }
+
+  .cal-bill-container {
+    flex: 1;
+    margin-right: 4rem;
+    width: 100%;
+    transition: all $transition-duration ease-in-out;
+  }
+
+  .tip-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    transition: grid-template-columns $transition-duration ease-in-out, grid-template-rows $transition-duration ease-in-out;
+  }
+
+  .result-container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    transition: all $transition-duration ease-in-out;
+    background-color: $deep-green;
+    border-radius: 10px;
+  }
+
+  .result {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: padding $transition-duration ease-in-out, margin-bottom $transition-duration ease-in-out;
+    padding-top: 1rem;
+  }
+
+  .reset-button {
+    margin-top: 4.5rem;
+    transition: margin-top $transition-duration ease-in-out;
+  }
+}
+
