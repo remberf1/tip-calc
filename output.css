@@ -6,7 +6,6 @@ input::-webkit-inner-spin-button {
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Space Mono", monospace;
@@ -26,7 +25,6 @@ body {
   justify-content: center;
   max-width: 375px;
   margin: 0 auto;
-  max-height: 850px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -35,13 +33,8 @@ body {
 }
 
 .img-container {
-  display: flex;
-  flex: 0 0 30%;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 70px;
-  transition: top 0.3s ease-in-out;
+  position: absolute;
+  top: 2rem;
 }
 
 .cal-container {
@@ -53,6 +46,8 @@ body {
   background-color: white;
   border-radius: 10px;
   width: 100%;
+  top: 8rem;
+  position: relative;
   transition: all 0.3s ease-in-out;
 }
 

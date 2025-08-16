@@ -30,7 +30,6 @@ input::-webkit-inner-spin-button {
 }
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: $font-stack;
@@ -50,20 +49,14 @@ body {
   justify-content: center;
   max-width: 375px;
   margin: 0 auto;
-  max-height: 850px;
   transition: all $transition-duration ease-in-out;
 }
 .people-container,.bill-container,.tip-container{
   margin-top:2.4rem;
 }
 .img-container {
-  display: flex;
-  flex: 0 0 30%;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 70px;
-  transition: top $transition-duration ease-in-out;
+  position: absolute;
+  top: 2rem;
 }
 
 .cal-container {
@@ -75,6 +68,8 @@ body {
   background-color: white;
   border-radius: 10px;
   width: 100%;
+  top: 8rem;
+  position: relative;
   transition: all $transition-duration ease-in-out;
 }
 label{
